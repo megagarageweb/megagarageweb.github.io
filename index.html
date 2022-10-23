@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript">
         $(window).scroll(function(){
@@ -20,7 +23,7 @@
     <div id="progressbar"></div>
 
     <div class="header">
-        <h1 class="style">Garage <b>WEB</b> </h1>
+        <h5 class="style">Garage <b>WEB</b> </h5>
       </div> 
       <div class="megatext">
         <h1>Mega Dance: </h1>
@@ -37,13 +40,13 @@
     <br>
     <br>
     <br>
-    <div class="megatext">
+    <div class="megatext2">
         <h1>Egy kanálnyi pész: </h1>
         <img src="kanalaspesz.JPG" alt="" class="responsive1">
       </div>
 
       <div>
-        <details class="megatext">
+        <details class="megatext2">
             <summary>Hasznos Weboldalak</summary>
             <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK">XP aktiválás</a> <br>
             <a href="http://home.sch.bme.hu/~dannyboy/keys.html">Win/App Aktiválás</a>
@@ -60,6 +63,11 @@
         <p>Ezt a weboldal csak is a garázsban és annak környékén szabad haszálni</p>
       </div>
       <style>
+                :root {
+            --bg-color: #7289DA;
+            --typewriterSpeed: 3s;
+            --typewriterCharacters: 10;
+        }
 
         body {
             scroll-behavior: smooth;
@@ -96,6 +104,10 @@
             text-align: center;
             background-color: #7289DA;
             padding: 0,0;
+            place-content: center;
+            text-align: center;
+            font-family: "Source Sans Pro", sans-serif;
+            display: grid;
             overflow: hidden;
             left: 0;
             top: 0;
@@ -106,6 +118,10 @@
         }
         
         .megatext {
+            font-size: 1.3em;
+        }
+
+        .megatext2 {
             font-size: 1.3em;
         }
 
@@ -132,6 +148,13 @@
             text-decoration: none;
         }
 
+        h5 {
+            position: relative;
+            font-family: 'Source Code Pro', monospace;
+            width: max-content;
+
+        }
+
         ::-webkit-scrollbar {
             width: 0;
         }   
@@ -151,20 +174,60 @@
             0 0 50px #330867;
         }
 
+        h5::before, h5::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        h5::before {
+            background: var(--bg-color);
+            animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+        }
+
+        h5::after {
+            width: .125em;
+            background: black;
+            animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+        }
+
+        @keyframes typewriter {
+            to {left: 100%;}
+        }
+
+        @keyframes blink {
+            to {
+                background: transparent;
+            }
+        }
+
+        .megatext h1 {
+            margin-left: 0;
+            opacity: 0;
+            transform: translateY(3rem);
+            animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translatey(0);
+            }
+        }
+
         .style{
     font-size: 1.7em;
-    font-weight: 300;
     color: rgba(255, 255, 255, 0.75);
     text-transform: uppercase;
+    font-family: 'Source Code Pro', monospace;
+
 }
-h1 b {
-    color: #fff;
+h5 b {
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 500;
-    text-shadow: 0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 30px #fff,
-    0 0 40px #fff,
-    0 0 50px #fff;
 }
       </style>
       
