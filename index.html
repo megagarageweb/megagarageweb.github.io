@@ -81,12 +81,11 @@
     <br>
     <br>
     <br>
-    <div class="megatext2">
+    <div class="megatext2" id="margin1">
         <h1>Egy kanálnyi pész: </h1>
         <center><img src="kanalaspesz.JPG" alt="" class="responsive1"></center>
       </div>
-      <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br> 
-      <div>
+      <div class="sponbtm">
         <details class="megatext2">
             <summary>Hasznos Weboldalak</summary>
             <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK">XP aktiválás</a> <br>
@@ -99,8 +98,6 @@
       <br>
       <br>
       <br>
-      <br><br> <br> <br> <br> <br> <br> <br> <br> 
-
       <div class="footer">
         <p>Ezt a weboldal csak is a garázsban és annak környékén szabad haszálni</p>
       </div>
@@ -114,6 +111,14 @@
         body {
             scroll-behavior: smooth;
             background-color: #36393f;
+        }
+
+        .sponbtm {
+            margin-bottom: 10px;
+        }
+
+        #margin1 {
+            margin-bottom: 20px;
         }
 
         .footer {
@@ -165,7 +170,7 @@
         }
 
         .megatext2 {
-            position: absolute;
+            position: relative;
             left: 50%;
             transform: translate(-50%, 0);
             font-size: 1.3em;
@@ -201,9 +206,6 @@
 
         }
 
-        details{
-            padding-bottom: 30vh;
-        }
 
         ::-webkit-scrollbar {
             width: 0;
