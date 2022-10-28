@@ -30,14 +30,33 @@
         <h1>Mega Dance: </h1>
       </div>
 
-    <div class="megadance">
+    <div class="megadance" id="megaaa">
         
-        <video controls autoplay width="300" height="40">
-            <source src="https://gamershouse.hu:8080/livemega.mp3" type="audio/mp3">
+        <video controls autoplay width="300" height="40" id="megyamega2">
+            <source id="megyamega" src="https://gamershouse.hu:8080/livemega.mp3" type="audio/mp3">
             Your browser does not support HTML video.
           </video>
     </div>
-    <br> <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br>
+    <div class="mobilemega">
+        <h1>Mobilon vagy?</h1>
+        <label class="toggle" for="myToggle">
+            <input class="toggle__input" type="checkbox" id="myToggle" onchange="checked1()">
+            <div class="toggle__fill"></div>
+        </label>
+        <script>
+            function checked1() {
+                if(document.getElementById('myToggle').checked) {
+                    document.getElementById('megyamega').setAttribute('src', 'http://gamershouse.hu:8000/megamobil');
+                    document.getElementById('megyamega2').load();
+                } else {
+                    document.getElementById('megyamega').setAttribute('src', 'https://gamershouse.hu:8080/livemega.mp3');
+                    document.getElementById('megyamega2').load();
+                }
+            }
+        </script>
+    </div>
+    <br> <br>
 
 
 
@@ -420,6 +439,49 @@
         .vc_column-inner {
             margin-left: 10%;
             margin-right: 10%;
+        }
+
+        .toggle {
+            --width: 40px;
+            --height: calc(var(--width) / 2);
+            --border-radius: calc(var(--height) / 2);
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .toggle__input {
+            display: none;
+        }
+
+        .toggle__fill {
+            position: relative;
+            width: var(--width);
+            height: var(--height);
+            border-radius: var(--border-radius);
+            background: #dddddd;
+            transition: background 0.2s;
+
+        }
+
+        .toggle__input:checked ~ .toggle__fill {
+            background: #00CCFF;
+        }
+
+        .toggle__fill::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: var(--height);
+            width: var(--height);
+            background: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            border-radius: var(--border-radius);
+            transition: transform 0.2s;
+        }
+
+        .toggle__input:checked ~ .toggle__fill::after {
+            transform: translateX(var(--height));
         }
 
         .style{
