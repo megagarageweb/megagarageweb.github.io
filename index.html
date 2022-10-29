@@ -47,7 +47,7 @@
         <script>
             function checked1() {
                 if(document.getElementById('myToggle').checked) {
-                    document.getElementById('megyamega').setAttribute('src', 'https://gamershouse.hu/megamobil');
+                    document.getElementById('megyamega').setAttribute('src', 'https://gamershouse.hu:8080/megamobil');
                     document.getElementById('megyamega2').load();
                 } else {
                     document.getElementById('megyamega').setAttribute('src', 'https://gamershouse.hu:8080/livemega.mp3');
@@ -247,10 +247,18 @@
     <br>
     <div class="megatext2" id="margin1">
         <h1> Galéria: </h1>
-        <center><img src="kanalaspesz.JPG" alt="" class="responsive1"></center>
-        <center><img src="garagecat.jpg" alt="" class="responsive1"></center>
 
       </div>
+
+      <div class="row">
+        <div class="column">
+          <img src="kanalaspesz.JPG" style="max-width:60%">
+        </div>
+        <div class="column">
+          <img src="garagecat.jpg" style="max-width:60%">
+        </div>
+      </div>
+
       <div class="sponbtm">
         <details class="megatext2">
             <summary>Hasznos Weboldalak</summary>
@@ -277,6 +285,26 @@
         body {
             scroll-behavior: smooth;
             background-color: #36393f;
+        }
+
+        .column {
+            box-sizing: border-box;
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+
+        .row::after {
+            box-sizing: border-box;
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media screen and (max-width: 500px) {
+            .column {
+            width: 100%;
+            }
         }
 
         .sponbtm {
