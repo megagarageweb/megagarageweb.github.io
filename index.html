@@ -204,7 +204,7 @@
         border-radius:5px;background:#fff !important}
         .orbLt{background-color:#7289DA !important}/*common list title bg*/
         .orbLtn{color:#ffffff !important}/*common list title color*/
-        .orbIL{height:100px}/*track list height: user height, e.g. 250px - 45px(title) - [33px(schedule, if enabled)] */
+        .orbIL{height:34px}/*track list height: user height, e.g. 250px - 45px(title) - [33px(schedule, if enabled)] */
         .orbIL,.orbILs{background:#ffffff !important} /* list bg, schedule bg */
         .orbILi>a,.orbILi>a:visited,.orbILi>span,.orbILi>a:hover>time,.orbILi.a>a>time,.orbILi.a>span>time{color:#333333 !important} /*item color, hover-item time color, active-item time color */
         .orbILi>a:hover,.orbILi.a>a,.orbILi.a>span,.orbILsi>a:hover,.orbILsi>span{color:#7289DA !important} /*hover-item color, active-item color, schedule hover-item color, schedule active-item color*/
@@ -221,7 +221,7 @@
     
     
     <p><a class="orbLh" title="Online Rádió" href="https://onlineradiobox.com/hu/" target="_blank" rel="noopener noreferrer"></a><br />
-    <a class="orbLt" href="https://onlineradiobox.com/hu/megadance/" target="_blank" rel="noopener noreferrer">Mega Lista<br />
+    <a class="orbLt" href="https://onlineradiobox.com/hu/megadance/" target="_blank" rel="noopener noreferrer">Szól a Megán<br />
     </a><br />
     <script>
           var orbpl_w = orbpl_w || { lang: "hu-hu" };
@@ -248,15 +248,8 @@
     <div class="megatext2" id="margin1">
         <h1> Galéria: </h1>
 
-      </div>
-
-      <div class="row">
-        <div class="column">
-          <img src="kanalaspesz.JPG" style="max-width:60%">
-        </div>
-        <div class="column">
-          <img src="garagecat.jpg" style="max-width:60%">
-        </div>
+        <center><img src="kanalaspesz.JPG" class="responsive1" >
+        <img src="garagecat.jpg"  class="responsive1"></center>
       </div>
 
       <div class="sponbtm">
@@ -264,7 +257,8 @@
             <summary>Hasznos Weboldalak</summary>
             <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK">XP aktiválás</a> <br>
             <a href="http://home.sch.bme.hu/~dannyboy/keys.html">Win/App Aktiválás</a> <br>
-            <a href="http://ndxcode.github.io/">Odin HUB</a>
+            <a href="http://ndxcode.github.io/">Odin HUB</a> <br>
+            <a href="http://phonecollection.hu/">Phone Collection Hungary</a>
         </details>
       </div>
 
@@ -287,24 +281,8 @@
             background-color: #36393f;
         }
 
-        .column {
-            box-sizing: border-box;
-            float: left;
-            width: 50%;
-            padding: 5px;
-        }
-
-        .row::after {
-            box-sizing: border-box;
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        @media screen and (max-width: 500px) {
-            .column {
-            width: 100%;
-            }
+        .orbILs {
+            display: none;
         }
 
         .sponbtm {
@@ -313,6 +291,10 @@
 
         #margin1 {
             margin-bottom: 30px;
+        }
+
+        summary:hover {
+            color: #7289DA;
         }
 
         .footer {
