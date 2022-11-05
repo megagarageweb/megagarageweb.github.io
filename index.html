@@ -30,13 +30,13 @@
         <h1>Mega Dance: </h1>
       </div>
 
-    <div class="megadance" id="megaaa">
-        
-        <video controls autoplay width="300" height="40" id="megyamega2">
+    <center><div class="megadance" id="megaaa">
+        <span></span>
+        <video controls autoplay width="300" height="40" id="megyamega2" class="megamusicplayer">
             <source id="megyamega" src="https://gamershouse.hu:8080/livemega.mp3" type="audio/mp3">
             Your browser does not support HTML video.
           </video>
-    </div>
+    </div></center>
     <br> <br> <br> <br> <br>
     <div class="mobilemega">
         <h1>Mobilon vagy?</h1>
@@ -422,15 +422,60 @@
             margin-top: 20px;
         }
 
+
+
         .megadance {
+            position: relative;
+            width: 310px;
+            height: 60px;
+            background: #36393f;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: -30px;
+        }
+
+        .megadance::after {
+            content: "";
             position: absolute;
-            left: 50%;
-            transform: translate(-50%, 0);
-            padding: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.400);
-            box-shadow: 0 0 10px #fff,
-            0 0 30px #fff;
-            border-radius: 50px;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent, transparent, transparent, #7289DA);
+            animation: animate_border 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .megadance::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent, transparent, transparent, #00CCFF);
+            animation: animate_border 4s linear infinite;
+        }
+
+        @keyframes animate_border {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .megadance span {
+            position: absolute;
+            inset: 5px;
+            border-radius: 16px;
+            background: #36393f;
+            z-index: 1;
+        }
+
+        .megamusicplayer {
+            z-index: 2;
         }
 
         .header {
