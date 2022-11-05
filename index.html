@@ -313,6 +313,10 @@
             margin-bottom: 50px;
         }
 
+        .fixglitch1 {
+            z-index: 1;
+        }
+
         .toggleinfo {
             float: right;
             margin-top: 8px;
@@ -352,7 +356,7 @@
             width: 100vw;
             height: 100vh;
             background: rgba(0, 0, 0, 0.7);
-            z-index: 1;
+            z-index: 2;
             display: none;
         }
 
@@ -400,7 +404,13 @@
         }
 
         summary:hover {
-            color: #7289DA;
+            animation: collectionHover 0.5s forwards;
+        }
+
+        @keyframes collectionHover {
+            to {
+                color: #7289DA;
+            }
         }
 
         .footer {
@@ -434,7 +444,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            margin-bottom: -30px;
+            margin-bottom: -70px;
         }
 
         .megadance::after {
