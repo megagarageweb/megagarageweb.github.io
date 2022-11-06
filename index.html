@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light only">
     <link rel="shortcut icon" href="tres.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -21,10 +21,12 @@
          </script>
           <script>
             if (navigator.userAgent.match(/samsung/i)) {
-                alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
+                if(window.matchMedia('(prefers-color-scheme: dark)')) {
+                    alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
                       "a weboldal stílusát. Kérem használj egy másik  " + 
                       "népszerű böngészőt. \n\n" +
                       "Például: Firefox, Microsoft Edge, vagy Google Chrome.");
+                }
             }
          </script>
          
