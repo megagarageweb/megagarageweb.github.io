@@ -21,7 +21,9 @@
          </script>
           <script>
             if (navigator.userAgent.match(/samsung/i)) {
-                if(window.matchMedia('(prefers-color-scheme: dark)')) {
+                let mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
+                let isDarkMode = mediaQueryObj.matches;
+                if(isDarkMode = true) {
                     alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
                       "a weboldal stílusát. Kérem használj egy másik  " + 
                       "népszerű böngészőt. \n\n" +
