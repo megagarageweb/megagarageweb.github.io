@@ -258,10 +258,10 @@
       <div class="sponbtm">
         <details class="megatext2">
             <summary>Hasznos Weboldalak</summary>
-            <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK">XP aktiválás</a> <br>
-            <a href="http://home.sch.bme.hu/~dannyboy/keys.html">Win/App Aktiválás</a> <br>
-            <a href="http://ndxcode.github.io/">Odin HUB</a> <br>
-            <a href="http://phonecollection.hu/">Phone Collection Hungary</a>
+            <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK"> <span>XP aktiválás</span></a> <br>
+            <a href="http://home.sch.bme.hu/~dannyboy/keys.html"><span>Win/App Aktiválás</span></a> <br>
+            <a href="http://ndxcode.github.io/"><span>Odin HUB</span></a> <br>
+            <a href="http://phonecollection.hu/"><span>Phone Collection Hungary</span></a>
         </details>
       </div>
 
@@ -312,6 +312,49 @@
         .sponbtm {
             margin-bottom: 50px;
         }
+
+    .megatext2 a {
+        position: relative;
+        width: 300px;
+        height: 75px;
+        margin: 10px 0;
+        font-size: 24px;
+        color: #000;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .megatext2 a:hover {
+        color: #fff;
+    }
+
+    .megatext2 a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: url(btn-bg1.png);
+        background-size: cover;
+        transform-origin: left;
+        transition: 0.5s;
+    }
+
+    .megatext2 a:hover:before {
+        width: 100%;
+    }
+
+    
+
+
+    .megatext2 a span {
+        position: relative;
+        z-index: 1;
+    }
 
         .fixglitch1 {
             z-index: 1;
