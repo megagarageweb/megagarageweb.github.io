@@ -705,6 +705,16 @@
             transform: translateX(var(--height));
         }
 
+        @media (prefers-color-scheme: dark) {
+            .toggle__fill::after {
+                background: #FFFFFF !important;
+            }
+
+            .toggle__fill {
+                background: #dddddd !important;
+            }
+        }
+
         .style{
     font-size: 1.7em;
     color: rgba(255, 255, 255, 1);
