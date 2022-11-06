@@ -693,7 +693,7 @@
             width: var(--width);
             height: var(--height);
             border-radius: var(--border-radius);
-            background: #dddddd !important;
+            background: #dddddd ;
             transition: background 0.2s;
 
         }
@@ -709,7 +709,7 @@
             left: 0;
             height: var(--height);
             width: var(--height);
-            background: #FFFFFF !important;
+            background: #FFFFFF ;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
             border-radius: var(--border-radius);
             transition: transform 0.2s;
@@ -717,16 +717,6 @@
 
         .toggle__input:checked ~ .toggle__fill::after {
             transform: translateX(var(--height));
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .toggle__fill::after {
-                background: #FFFFFF !important;
-            }
-
-            .toggle__fill {
-                background: #dddddd !important;
-            }
         }
 
         .style{
