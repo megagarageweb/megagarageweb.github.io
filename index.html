@@ -21,14 +21,12 @@
          </script>
           <script>
             if (navigator.userAgent.match(/samsung/i)) {
-                let mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
-                let isDarkMode = mediaQueryObj.matches;
-                if(isDarkMode) {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
                       "a weboldal stílusát. Kérem használj egy másik  " + 
                       "népszerű böngészőt. \n\n" +
                       "Például: Firefox, Microsoft Edge, vagy Google Chrome.");
-                }
+                }   
             }
          </script>
          
