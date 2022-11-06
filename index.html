@@ -21,10 +21,16 @@
          </script>
           <script>
             if (navigator.userAgent.match(/samsung/i)) {
+                const isMobile = function () {
+                const match = window.matchMedia('(pointer:coarse)');
+                return match && match.matches;
+                };
+                if(isMobile = true) {
                     alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
                       "a weboldal stílusát. Kérem használj egy másik  " + 
                       "népszerű böngészőt. \n\n" +
                       "Például: Firefox, Microsoft Edge, vagy Google Chrome."); 
+                }
             }
          </script>
          
