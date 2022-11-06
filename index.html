@@ -274,8 +274,10 @@
             <a href="http://phonecollection.hu/"><span>Phone Collection Hungary</span></a>
         </details>
       </div>
-
       <br>
+      <div class="reflective_garage">
+        <center><h1 data-text="MEGA GARAGE" class="reflecting_text">MEGA GARAGE</h1></center>
+      </div>
       <br>
       <br>
       <br>
@@ -325,6 +327,36 @@
 
         .sponbtm {
             margin-bottom: 50px;
+        }
+        
+        .reflective_garage {
+            margin-bottom: 10vmax;
+        }
+
+        .reflecting_text {
+            margin: 0;
+            padding: 0;
+            color: #00CCEE;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 6vw;
+        }
+
+        .reflecting_text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: bottom;
+            transform: rotateX(180deg);
+            line-height: 0.865em;
+            background: linear-gradient(0deg, #00CCEE 0,transparent 80%);
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0.5;
         }
 
     .megatext2 a {
