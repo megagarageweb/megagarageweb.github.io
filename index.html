@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="shortcut icon" href="tres.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -50,10 +52,12 @@
     <br> <br> <br> <br> <br>
     <div class="mobilemega">
         <h1>Mobilon vagy?</h1>
-        <label class="toggle" for="myToggle">
-            <input class="toggle__input" type="checkbox" id="myToggle" onchange="checked1()">
-            <div class="toggle__fill"></div>
-        </label>
+        <center><label class="toggle">
+            <input type="checkbox" id="myToggle" onchange="checked1()">
+            <div class="icon">
+                <div class="iconBox"><ion-icon name="power-outline"></ion-icon></div>
+            </div>
+        </label></center>
         <script>
             function checked1() {
                 if(document.getElementById('myToggle').checked) {
@@ -270,8 +274,9 @@
             <summary>Hasznos Weboldalak</summary>
             <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK"> <span>XP aktiválás</span></a> <br>
             <a href="http://home.sch.bme.hu/~dannyboy/keys.html"><span>Win/App Aktiválás</span></a> <br>
-            <a href="http://ndxcode.github.io/"><span>Odin HUB</span></a> <br>
-            <a href="http://phonecollection.hu/"><span>Phone Collection Hungary</span></a>
+            <a href="http://ndxcode.github.io/"><span>NDXCode</span></a> <br>
+            <a href="http://phonecollection.hu/"><span>Phone Collection Hungary</span></a> <br>
+            <a href="https://github.com/NDXCode/Odin-Hub/raw/main/Odin Hub.zip"><span>Odin HUB</span></a>
         </details>
       </div>
       <br>
@@ -359,45 +364,45 @@
             opacity: 0.5;
         }
 
-    .megatext2 a {
-        position: relative;
-        width: 300px;
-        height: 75px;
-        margin: 10px 0;
-        font-size: 24px;
-        color: #fff;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        transition: 0.5s;
-        margin-bottom: -10px;
-    }
+        .megatext2 a {
+            position: relative;
+            width: 300px;
+            height: 75px;
+            margin: 10px 0;
+            font-size: 24px;
+            color: #fff;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.5s;
+            margin-bottom: -10px;
+        }
 
-    .megatext2 a::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: url(btn-bg2.png);
-        background-size: cover;
-        transform-origin: left;
-        transition: 0.5s;
-    }
+        .megatext2 a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: url(btn-bg2.png);
+            background-size: cover;
+            transform-origin: left;
+            transition: 0.5s;
+        }
 
-    .megatext2 a:hover:before {
-        width: 100%;
-    }
+        .megatext2 a:hover:before {
+            width: 100%;
+        }
 
     
 
 
-    .megatext2 a span {
-        position: relative;
-        z-index: 1;
-    }
+        .megatext2 a span {
+            position: relative;
+            z-index: 1;
+        }
 
         .fixglitch1 {
             z-index: 1;
@@ -710,66 +715,106 @@
             }
         }
 
-        .toggle {
-            --width: 40px;
-            --height: calc(var(--width) / 2);
-            --border-radius: calc(var(--height) / 2);
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .toggle__input {
-            display: none;
-        }
-
-        .toggle__fill {
-            position: relative;
-            width: var(--width);
-            height: var(--height);
-            border-radius: var(--border-radius);
-            background: #dddddd ;
-            transition: background 0.2s;
-
-        }
-
-        .toggle__input:checked ~ .toggle__fill {
-            background: #00CCFF;
-        }
-
-        .toggle__fill::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: var(--height);
-            width: var(--height);
-            background: #FFFFFF ;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-            border-radius: var(--border-radius);
-            transition: transform 0.2s;
-        }
-
-        .toggle__input:checked ~ .toggle__fill::after {
-            transform: translateX(var(--height));
-        }
-
         .style{
-    font-size: 1.7em;
-    color: rgba(255, 255, 255, 1);
-    text-transform: uppercase;
-    font-family: 'Source Code Pro', monospace;
-    margin-top: 25px;
-    margin-bottom: 30px;
+            font-size: 1.7em;
+            color: rgba(255, 255, 255, 1);
+            text-transform: uppercase;
+            font-family: 'Source Code Pro', monospace;
+            margin-top: 25px;
+            margin-bottom: 30px;
 
-}
-    .style b {
-        color: rgba(255, 255, 255, 0.75);
+        }   
+        .style b {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        h5 b {
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 500;
+        }
+
+        label {
+        position: relative;
+        width: 120px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-h5 b {
-    color: rgba(255, 255, 255, 0.65);
-    font-weight: 500;
-}
+    label::before {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 4px;
+        background: #444;
+        border-radius: 4px;
+    }
+
+    label input {
+        position: absolute;
+        appearance: none;
+    }
+
+    .icon {
+        position: absolute;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        transition: 0.5s;
+    }
+
+    label input:checked ~ .icon {
+        left: 60px;
+    }
+
+    .icon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 100%;
+        background: linear-gradient(#fff, #fff, #e3e3e3);
+        filter: blur(1px);
+        z-index: 1;
+    }
+
+    .icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 10px;
+        height: 100%;
+        background: #9d9d9d;
+        filter: blur(1px);
+    }
+
+    .iconBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#dbdae1, #a3aaba);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), 15px, 15px, 15px rgba(0, 0, 0, 0.1), 20px, 20px, 15px rgba(0, 0, 0, 0.1), 30px, 30px, 15px rgba(0, 0, 0, 0.1), inset 1px 1px 2px #fff;
+        
+    }
+
+    .iconBox ion-icon {
+        color: #555;
+        font-size: 1.5em;
+        --ionicon-stroke-width: 50px;
+        transition: 0.5s;
+    }
+
+    label input:checked ~ .icon .iconBox ion-icon {
+        color: #00ffe2;
+        filter: drop-shadow(0 0 5px #00ffe2) drop-shadow(0 0 15px #00ffe2);
+    }
       </style>
       
 </body>
