@@ -215,6 +215,7 @@
         font-size:11px!important}<br />  </style><style media="screen" id="orb_pl_1c22eec7962c09a9_settings">/*user customization*/
         .orbL{width:auto}
         .orbL{border-style: solid;
+            animation: borderfade 5s infinite;
         border-color:#FFFFFF !important;
         box-shadow: 0 0 10px #fff,
         0 0 10px #fff;
@@ -608,6 +609,34 @@
             left: 50%;
             transform: translate(-50%, 0);
             font-size: 1.3em;
+
+        }
+
+        @keyframes borderfade {
+            0% {
+                border-color:#FFFFFF !important;
+        box-shadow: 0 0 10px #fff,
+        0 0 10px #fff;
+        border-radius:5px;background:#fff !important
+            }
+            50% {
+                border-color:#00CCFF !important;
+        box-shadow: 0 0 10px #00CCFF,
+        0 0 10px #00CCFF;
+        border-radius:5px;background:#00CCFF !important
+            }
+            75% {
+                border-color:#7289DA !important;
+        box-shadow: 0 0 10px #7289DA,
+        0 0 10px #7289DA;
+        border-radius:5px;background:#7289DA !important
+            }
+            100% {
+                border-color:#FFFFFF !important;
+        box-shadow: 0 0 10px #fff,
+        0 0 10px #fff;
+        border-radius:5px;background:#fff !important
+            }
 
         }
 
