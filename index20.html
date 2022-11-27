@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Keyboard Tester</title>
+</head>
+<body>
+    <center><h1 style="font-family: ARIAL;">CapsLock is: <b id="txt1"></b></h1>
+    <p id="ht1" style="font-family: Arial, Helvetica, sans-serif; display: none; font-size: 2vw;">Please turn it off otherwise the tester wont function properly</p></center> 
+    <div class="container"><CEnter><br><br><br><br><br><br>
+        <div class="key" id="61" style="font-size: 1.5vw; width: 5.5vw;"><h1>Esc</h1></div>
+        <div class="key" id="49" style="font-size: 1.5vw;"><h1>F1</h1></div>
+        <div class="key" id="50" style="font-size: 1.5vw;"><h1>F2</h1></div>
+        <div class="key" id="51" style="font-size: 1.5vw;"><h1>F3</h1></div>
+        <div class="key" id="52" style="font-size: 1.5vw;"><h1>F4</h1></div>
+        <div class="key" id="53" style="font-size: 1.5vw;"><h1>F5</h1></div>
+        <div class="key" id="54" style="font-size: 1.5vw;"><h1>F6</h1></div>
+        <div class="key" id="55" style="font-size: 1.5vw;"><h1>F7</h1></div>
+        <div class="key" id="56" style="font-size: 1.5vw;"><h1>F8</h1></div>
+        <div class="key" id="57" style="font-size: 1.5vw;"><h1>F9</h1></div>
+        <div class="key" id="58" style="font-size: 1.5vw;"><h1>F10</h1></div>
+        <div class="key" id="59" style="font-size: 1.5vw;"><h1>F11</h1></div>
+        <div class="key" id="60" style="font-size: 1.5vw;"><h1>F12</h1></div>
+        <div class="key" style="font-size: 1.5vw; background: #aaa; width: 7vw;"><h1>PWR</h1></div><br> <br>
+    <div class="key" id="1"><h1>0</h1></div>
+    <div class="key" id="2"><h1>1</h1></div>
+    <div class="key" id="3"><h1>2</h1></div>
+    <div class="key" id="4"><h1>3</h1></div>
+    <div class="key" id="5"><h1>4</h1></div>
+    <div class="key" id="6"><h1>5</h1></div>
+    <div class="key" id="7"><h1>6</h1></div>
+    <div class="key" id="8"><h1>7</h1></div>
+    <div class="key" id="9"><h1>8</h1></div>
+    <div class="key" id="10"><h1>9</h1></div>
+    <div class="key" id="11"><h1>ö</h1></div>
+    <div class="key" id="12"><h1>ü</h1></div>
+    <div class="key" id="13"><h1>ó</h1></div>
+    <div class="key" id="67" style="width: 7vw;"><h1>Del</h1></div><br>
+    <div class="key" id="68" style="width: 8vw;"><h1>Tab</h1></div>
+    <div class="key" id="14"><h1>q</h1></div>
+    <div class="key" id="15"><h1>w</h1></div>
+    <div class="key" id="16"><h1>e</h1></div>
+    <div class="key" id="17"><h1>r</h1></div>
+    <div class="key" id="18"><h1>t</h1></div>
+    <div class="key" id="19"><h1>z</h1></div>
+    <div class="key" id="20"><h1>u</h1></div>
+    <div class="key" id="21"><h1>i</h1></div>
+    <div class="key" id="22"><h1>o</h1></div>
+    <div class="key" id="23"><h1>p</h1></div>
+    <div class="key" id="24"><h1>ő</h1></div>
+    <div class="key" id="25"><h1>ú</h1></div>
+    <div class="key" id="26"><h1>ű</h1></div><br>
+    <div class="key" id="69" style="width: 8vw;"><h1>Cap</h1></div>
+    <div class="key" id="27"><h1>a</h1></div>
+    <div class="key" id="28"><h1>s</h1></div>
+    <div class="key" id="29"><h1>d</h1></div>
+    <div class="key" id="30"><h1>f</h1></div>
+    <div class="key" id="31"><h1>g</h1></div>
+    <div class="key" id="32"><h1>h</h1></div>
+    <div class="key" id="33"><h1>j</h1></div>
+    <div class="key" id="34"><h1>k</h1></div>
+    <div class="key" id="35"><h1>l</h1></div>
+    <div class="key" id="36"><h1>é</h1></div>
+    <div class="key" id="37"><h1>á</h1></div>
+    <div class="key" id="70" style="width: 8vw;"><h1>Ret</h1></div><br>
+    <div class="key" id="71" style="width: 8vw;"><h1>Shi</h1></div>
+    <div class="key" id="38"><h1>y</h1></div>
+    <div class="key" id="39"><h1>x</h1></div>
+    <div class="key" id="40"><h1>c</h1></div>
+    <div class="key" id="41"><h1>v</h1></div>
+    <div class="key" id="42"><h1>b</h1></div>
+    <div class="key" id="43"><h1>n</h1></div>
+    <div class="key" id="44"><h1>m</h1></div>
+    <div class="key" id="45"><h1>,</h1></div>
+    <div class="key" id="46"><h1>.</h1></div>
+    <div class="key" id="47"><h1>-</h1></div> 
+    <div class="key" id="72" style="width: 8vw;"><h1>Shi</h1></div><br>
+    <div class="key" style="font-size: 1.5vw; background: #aaa;"><h1>fn</h1></div>
+    <div class="key" id="62" style="font-size: 1.5vw;"><h1>Ct</h1></div>
+    <div class="key" id="63" style="font-size: 1.5vw;"><h1>Op</h1></div>
+    <div class="key" id="64" style="font-size: 1.5vw;"><h1>Cm</h1></div>
+    <div class="key" id="48" style="width: 32vw;"><h1>Space</h1></div>
+    <div class="key" id="65" style="font-size: 1.5vw;"><h1>Cm</h1></div>
+    <div class="key" id="66" style="font-size: 1.5vw; margin-bottom: 1vw;"><h1>Op</h1></div>
+    <div class="key" id="80" style="width: 6vw; height: 2.5vw; border-radius: 5px; margin-left: 10px; font-size: 1vw;"><h1>▲</h1></div><br><br>
+    <div class="key" id="81" style="width: 6vw; height: 2.5vw; border-radius: 5px; margin-left: 10px; font-size: 1vw; float: right; position: absolute; left: 86.8%; transform: translate(0, -86.8%); margin-top: 1.3vh;"><h1>►</h1></div>
+    <div class="key" id="82" style="width: 6vw; height: 2.5vw; border-radius: 5px; margin-left: 10px; font-size: 1vw; float: right; position: absolute; left: 80%; transform: translate(0, -80%); margin-top: 1.18vh;"><h1>▼</h1></div>
+    <div class="key" id="83" style="width: 6vw; height: 2.5vw; border-radius: 5px; margin-left: 10px; font-size: 1vw; float: right; position: absolute; left: 73.3%; transform: translate(0, -73.3%); margin-top: 1.1vh;"><h1>◄</h1></div><br><br><br><br>
+    <div class="key" id="73" style="width: 13vw; border-radius: 0 !important; border-bottom-left-radius: 15px !important;"><h1></h1></div>
+    <div class="key" id="74" style="width: 3vw;"><h1></h1></div>
+    <div class="key" id="75" style="width: 13vw; border-radius: 0 !important; border-bottom-right-radius: 15px !important;"><h1></h1></div><br>
+    <div class="key" id="78" style="width: 2vw; font-size: 1vw;"><h1 style="margin-top: 1vh;">⬇</h1></div>
+    <div class="key" id="76" style="width: 6vw; height: 1.5vw;"><h1></h1></div>
+    <div class="key" id="77" style="width: 6vw; height: 1.5vw;"><h1></h1></div>
+    <div class="key" id="79" style="width: 2vw; font-size: 1vw;"><h1 style="margin-top: 1vh;">⬆</h1></div>
+</CEnter>
+</div>
+</center>
+
+
+<!--<input type="text" spellcheck="false"  onkeypress="return myKeyPress(event)" class="inf1" id="inp1"/> -->
+    <script>
+//        document.getElementById("inp1").focus();
+//        function myKeyPress(e){
+//  var keynum;
+//
+//  if(window.event) { // IE                  
+//    keynum = e.keyCode;
+//  } else if(e.which){ // Netscape/Firefox/Opera                 
+//    keynum = e.which;
+//  }
+//
+//  if( String.fromCharCode(keynum) === "0") {
+//    document.getElementById("1").classList.add("ok");
+//  } else if( String.fromCharCode(keynum) === "1") {
+//    document.getElementById("2").classList.add("ok")
+//} else if( String.fromCharCode(keynum) === "2") {
+//    document.getElementById("3").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "3") {
+//    document.getElementById("4").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "4") {
+//    document.getElementById("5").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "5") {
+//    document.getElementById("6").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "6") {
+//    document.getElementById("7").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "7") {
+//    document.getElementById("8").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "8") {
+//    document.getElementById("9").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "9") {
+//    document.getElementById("10").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ö") {
+//    document.getElementById("11").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ü") {
+//    document.getElementById("12").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ó") {
+//    document.getElementById("13").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "q") {
+//    document.getElementById("14").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "w") {
+//    document.getElementById("15").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "e") {
+//    document.getElementById("16").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "r") {
+//    document.getElementById("17").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "t") {
+//    document.getElementById("18").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "z") {
+//    document.getElementById("19").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "u") {
+//    document.getElementById("20").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "i") {
+//    document.getElementById("21").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "o") {
+//    document.getElementById("22").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "p") {
+//    document.getElementById("23").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ő") {
+//    document.getElementById("24").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ú") {
+//    document.getElementById("25").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "ű") {
+//    document.getElementById("26").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "a") {
+//    document.getElementById("27").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "s") {
+//    document.getElementById("28").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "d") {
+//    document.getElementById("29").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "f") {
+//    document.getElementById("30").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "g") {
+//    document.getElementById("31").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "h") {
+//    document.getElementById("32").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "j") {
+//    document.getElementById("33").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "k") {
+//    document.getElementById("34").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "l") {
+//    document.getElementById("35").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "é") {
+//    document.getElementById("36").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "á") {
+//    document.getElementById("37").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "y") {
+//    document.getElementById("38").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "x") {
+//    document.getElementById("39").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "c") {
+//    document.getElementById("40").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "v") {
+//    document.getElementById("41").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "b") {
+//    document.getElementById("42").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "n") {
+//    document.getElementById("43").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "m") {
+//    document.getElementById("44").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === ",") {
+//    document.getElementById("45").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === ".") {
+//    document.getElementById("46").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === "-") {
+//    document.getElementById("47").classList.add("ok");
+//} else if( String.fromCharCode(keynum) === " ") {
+//    document.getElementById("48").classList.add("ok");
+//} else if(keyCode == 18) {
+//            document.getElementById("63").classList.add("ok");
+//            document.getElementById("66").classList.add("ok");
+//         } else {
+//    alert("Incorrect Key")
+//    //alert(String.fromCharCode(keynum));
+//  }
+//}
+    </script>
+    <script>
+        $(function(){
+    $("body").keydown(function(e){
+
+         e.preventDefault();
+
+         var keyCode = e.keyCode || e.which;
+
+
+         console.log(keyCode);
+         if(keyCode == 17) {
+            document.getElementById("62").classList.add("ok");
+         } else if(keyCode == 18) {
+            document.getElementById("63").classList.add("ok");
+            document.getElementById("66").classList.add("ok");
+         } else if(keyCode == 91) {
+            document.getElementById("64").classList.add("ok");
+            document.getElementById("65").classList.add("ok");
+         } else if(keyCode == 32) {
+            document.getElementById("48").classList.add("ok");
+         } else if(keyCode == 27) {
+            document.getElementById("61").classList.add("ok");
+         } else if(keyCode == 112) {
+            document.getElementById("49").classList.add("ok");
+         } else if(keyCode == 113) {
+            document.getElementById("50").classList.add("ok");
+         } else if(keyCode == 114) {
+            document.getElementById("51").classList.add("ok");
+         } else if(keyCode == 115) {
+            document.getElementById("52").classList.add("ok");
+         } else if(keyCode == 116) {
+            document.getElementById("53").classList.add("ok");
+         } else if(keyCode == 117) {
+            document.getElementById("54").classList.add("ok");
+         } else if(keyCode == 118) {
+            document.getElementById("55").classList.add("ok");
+         } else if(keyCode == 119) {
+            document.getElementById("56").classList.add("ok");
+         }  else if(keyCode == 120) {
+            document.getElementById("57").classList.add("ok");
+         }  else if(keyCode == 121) {
+            document.getElementById("58").classList.add("ok");
+         } else if(keyCode == 122) {
+            document.getElementById("59").classList.add("ok");
+         } else if(keyCode == 123) {
+            document.getElementById("60").classList.add("ok");
+         } else if(keyCode == 192) {
+            document.getElementById("1").classList.add("ok");
+         } else if(keyCode == 49) {
+            document.getElementById("2").classList.add("ok");
+         } else if(keyCode == 50) {
+            document.getElementById("3").classList.add("ok");
+         } else if(keyCode == 51) {
+            document.getElementById("4").classList.add("ok");
+         } else if(keyCode == 52) {
+            document.getElementById("5").classList.add("ok");
+         } else if(keyCode == 53) {
+            document.getElementById("6").classList.add("ok");
+         } else if(keyCode == 54) {
+            document.getElementById("7").classList.add("ok");
+         } else if(keyCode == 55) {
+            document.getElementById("8").classList.add("ok");
+         } else if(keyCode == 56) {
+            document.getElementById("9").classList.add("ok");
+         } else if(keyCode == 57) {
+            document.getElementById("10").classList.add("ok");
+         } else if(keyCode == 48) {
+            document.getElementById("11").classList.add("ok");
+         } else if(keyCode == 187) {
+            document.getElementById("13").classList.add("ok");
+         } else if(keyCode == 8) {
+            document.getElementById("67").classList.add("ok");
+         }else if(keyCode == 9) {
+            document.getElementById("68").classList.add("ok");
+         }else if(keyCode == 81) {
+            document.getElementById("14").classList.add("ok");
+         }else if(keyCode == 87) {
+            document.getElementById("15").classList.add("ok");
+         }else if(keyCode == 69) {
+            document.getElementById("16").classList.add("ok");
+         }else if(keyCode == 82) {
+            document.getElementById("17").classList.add("ok");
+         }else if(keyCode == 84) {
+            document.getElementById("18").classList.add("ok");
+         }else if(keyCode == 90) {
+            document.getElementById("19").classList.add("ok");
+         }else if(keyCode == 85) {
+            document.getElementById("20").classList.add("ok");
+         }else if(keyCode == 73) {
+            document.getElementById("21").classList.add("ok");
+         }else if(keyCode == 79) {
+            document.getElementById("22").classList.add("ok");
+         }else if(keyCode == 219) {
+            document.getElementById("24").classList.add("ok");
+         }else if(keyCode == 221) {
+            document.getElementById("25").classList.add("ok");
+         }else if(keyCode == 220) {
+            document.getElementById("26").classList.add("ok");
+         }else if(keyCode == 80) {
+            document.getElementById("23").classList.add("ok");
+         } else if(keyCode == 20) {
+            document.getElementById("69").classList.add("ok");
+         } else if(keyCode == 13) {
+            document.getElementById("70").classList.add("ok");
+         } else if(keyCode == 16) {
+            document.getElementById("71").classList.add("ok");
+            document.getElementById("72").classList.add("ok");
+         } else if(keyCode == 65) {
+            document.getElementById("27").classList.add("ok");
+         } else if(keyCode == 83) {
+            document.getElementById("28").classList.add("ok");
+         } else if(keyCode == 68) {
+            document.getElementById("29").classList.add("ok");
+         } else if(keyCode == 70) {
+            document.getElementById("30").classList.add("ok");
+         } else if(keyCode == 71) {
+            document.getElementById("31").classList.add("ok");
+         } else if(keyCode == 72) {
+            document.getElementById("32").classList.add("ok");
+         } else if(keyCode == 74) {
+            document.getElementById("33").classList.add("ok");
+         } else if(keyCode == 75) {
+            document.getElementById("34").classList.add("ok");
+         } else if(keyCode == 76) {
+            document.getElementById("35").classList.add("ok");
+         } else if(keyCode == 186) {
+            document.getElementById("36").classList.add("ok");
+         } else if(keyCode == 222) {
+            document.getElementById("37").classList.add("ok");
+         }  else if(keyCode == 89) {
+            document.getElementById("38").classList.add("ok");
+         } else if(keyCode == 88) {
+            document.getElementById("39").classList.add("ok");
+         } else if(keyCode == 67) {
+            document.getElementById("40").classList.add("ok");
+         } else if(keyCode == 86) {
+            document.getElementById("41").classList.add("ok");
+         } else if(keyCode == 66) {
+            document.getElementById("42").classList.add("ok");
+         } else if(keyCode == 78) {
+            document.getElementById("43").classList.add("ok");
+         } else if(keyCode == 77) {
+            document.getElementById("44").classList.add("ok");
+         } else if(keyCode == 188) {
+            document.getElementById("45").classList.add("ok");
+         } else if(keyCode == 190) {
+            document.getElementById("46").classList.add("ok");
+         } else if(keyCode == 38) {
+            document.getElementById("80").classList.add("ok");
+         } else if(keyCode == 37) {
+            document.getElementById("83").classList.add("ok");
+         } else if(keyCode == 40) {
+            document.getElementById("82").classList.add("ok");
+         } else if(keyCode == 39) {
+            document.getElementById("81").classList.add("ok");
+         }
+    });
+});
+    </script>
+    <script>
+               $("body").keydown(function (e) {
+            if(e.key == "-"){
+                console.log(e.key);
+                document.getElementById("47").classList.add("ok");
+            } else if(e.key == "ü") {
+                console.log(e.key);
+                document.getElementById("12").classList.add("ok");
+            }
+
+        });
+    </script>
+    <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+$(document).on("mousedown", function() {
+    console.log(event.which)
+  if (event.which === 1) {
+    console.log("left");
+    document.getElementById("73").classList.add("ok");
+  } else if (event.which === 2) {
+    console.log("middle");
+    document.getElementById("74").classList.add("ok");
+  } else if (event.which === 3) {
+    console.log("right");
+    document.getElementById("75").classList.add("ok");
+  } else if (event.which === 4) {
+    console.log("down");
+    document.getElementById("76").classList.add("ok");
+  } else if (event.which === 5) {
+    console.log("up");
+    document.getElementById("77").classList.add("ok");
+  }
+});
+
+    </script>
+
+    <script>
+        window.addEventListener('wheel', ({ deltaY }) => {
+  console.log(deltaY);
+  if (deltaY > 0) {
+    console.log("scrolling down");
+    document.getElementById("78").classList.add("ok");
+  }
+  else if (deltaY < 0) {
+    console.log("scrolling up");
+    document.getElementById("79").classList.add("ok");
+  }
+});
+    </script>
+    <script>
+        document.addEventListener("keyup", function(event) {
+
+        if (event.getModifierState("CapsLock")) {
+            document.getElementById("txt1"). innerHTML = "ON";
+            document.getElementById("txt1").style.color = "red";
+            document.getElementById("ht1").style.display = "block";
+        } else {
+            document.getElementById("txt1"). innerHTML = "OFF";
+            document.getElementById("txt1").style.color = "green";
+            document.getElementById("ht1").style.display = "none";
+        }
+        });
+    </script>
+    <style>
+    body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 190%;
+            overflow: hidden;
+            user-select: none;
+    }
+
+    .inf1 {
+        cursor: default;
+        color: transparent;
+        top: 0;
+        left: 0;
+        font-size: 0px;
+        border: transparent;
+        z-index: 1;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        user-select: none;
+        appearance: none;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .key {
+        position: relative;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        width: 5vw;
+        margin-bottom: 2px;
+        align-items: center;
+        height: 5vw;
+        border: black 1px solid;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 5;
+    }
+
+    .container {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    z-index: 4;
+    width: 100vw;
+    height: fit-content;
+    }
+
+    .ok {
+        background-color: green;
+    }
+</style>
+</body>
+</html>
