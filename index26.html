@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <br>
+        <div class="sidebtn active" style="margin-top: -25px; margin-bottom: 10px;"  onclick="location.href='index25.html';"><div class="container"><div class="notif_active"></div></div><h1>F</h1></div>
+        <hr class="hr1"> 
+        <div class="sidebtn" style="margin-top: -12px;" onclick="location.href='index25.html';"><div class="container"><div class="notif"></div></div><h1>A</h1></div>
+        <div class="sidebtn" onclick="location.href='index25.html';"><div class="container"><div class="notif"></div></div><h1>B</h1></div>
+        <div class="sidebtn" onclick="location.href='index25.html';"><div class="container"><div class="notif"></div></div><h1>C</h1></div><br>
+        <hr class="hr1">
+        <div class=" hvrclr" onclick="location.href='index25.html';"><div class="container"><div></div></div><h1>+</h1></div>
+        <div class=" hvrclr" style="margin-bottom: -10px;" onclick="location.href='index25.html';"><div class="container"><div></div></div><svg aria-hidden="true" role="img" class="circleIcon-3489FI" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM14.19 14.19L6 18L9.81 9.81L18 6L14.19 14.19Z"></path></svg></div><br>
+        <hr class="hr1">
+        <div class=" hvrclr" onclick="location.href='index25.html';"><div class="container"><div></div></div><svg class="circleIcon-3489FI" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 12.586V2H13V12.586L16.293 9.293ZM18 20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 20V18H6V20H18Z"></path></svg></div><br>
+    </div>
+    <div class="channels">
+        <center><div class="friends"><div class="profilep"></div><div class="profilen">Dishcord #0001</div></div>
+        <div class="friends"><div class="profilep"></div><div class="profilen">Dishcord #0002</div></div>
+        <div class="friends"><div class="profilep"></div><div class="profilen">Dishcord #0003</div></div>
+        <div class="friends"><div class="profilep"></div><div class="profilen">Dishcord #0004</div></div>
+        <div class="friends"><div class="profilep"></div><div class="profilen">Dishcord #0005</div></div></center>
+    </div>
+    <div id="bodyContent">
+        <ul id="messages"></ul>
+        
+    </div>
+
+    <div role="textbox" class="msgsender" spellcheck="true">  
+        <input type="text" id="myText" value="" class="msgsndbox" placeholder="Type Something...">
+        <button id="send" class="SendBTN">⬆</button>  
+    </div>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #36393F;
+            display: flex;
+        }
+        .sidebar {
+            width: 70px;
+            height: 100vh;
+            background: #202225;
+        }
+
+        .msgsender {
+            width: calc(100vw - 340px);
+            height: 30px;
+            background: #40444B;
+            border-radius: 8px;
+            position: absolute;
+            left: 320px;
+            top: 90vh;
+            outline: none;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding-bottom: 11px;
+            padding-top: 11px;
+        }
+
+        .msgsndbox {
+            width: 95%;
+            color: #f3f3f3;
+            height: 100%;
+            background: #40444B;
+            border: none;
+            padding-left: 5px;
+        }
+
+        .msgsndbox:focus {
+            outline-width: 0;
+            border: none;
+        }
+
+        .sidebtn {
+            margin: 0 auto;
+            cursor: pointer;
+            line-height: 50px;
+            padding-left: 5px;
+            width: 48px;
+            color: #f3f3f3;
+            height: 50px;
+            margin-bottom: -10px;
+            border-radius: 50%;
+            background: #36393F;
+        }
+
+        .hvrclr {
+            margin: 0 auto;
+            cursor: pointer;
+            line-height: 50px;
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #36393F;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .hr1 {
+            width: 30px;
+            border: #424549 1px solid;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        .sidebtn {
+            animation: reverse1 .1s ease-in-out forwards;
+        }
+
+        .sidebtn:hover{
+            animation: rotate .1s ease-in-out forwards;
+        }
+
+        .active {
+            border-radius: 30% !important;
+                -webkit-border-radius: 30% !important;
+                -moz-border-radius: 30% !important;
+        }
+
+        @keyframes rotate {
+            from {
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+
+            }
+
+            to {
+                border-radius: 30%;
+                -webkit-border-radius: 30%;
+                -moz-border-radius: 30%;
+            }
+        }
+
+        @keyframes reverse1 {
+            from {
+                border-radius: 30%;
+                -webkit-border-radius: 30%;
+                -moz-border-radius: 30%;
+            }
+
+            to {
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+            }
+        }
+
+        .notif {
+            width: 10px;
+            height: 10px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            animation: notifunhover .1s ease-in-out forwards;
+            position: absolute;
+            margin-top: 25px;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: #f3f3f3;
+            left: -20px;
+        }
+
+        .notif_active {
+            width: 10px;
+            height: 35px;
+            border-top-right-radius: 20%;
+            border-bottom-right-radius: 20%;
+            position: absolute;
+            margin-top: 25px;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: #f3f3f3;
+            left: -20px;
+        }
+
+        .sidebtn:hover > .container > .notif {
+            animation: notifhover .1s ease-in-out forwards;
+        }
+
+        @keyframes notifhover {
+            from {
+                height: 10px;
+                border-top-right-radius: 50%;
+                border-bottom-right-radius: 50%;
+            }
+
+            to {
+                height: 25px;
+                border-top-right-radius: 20%;
+                border-bottom-right-radius: 20%;
+            }
+        }
+
+        @keyframes notifunhover {
+            from {
+                height: 25px;
+                border-top-right-radius: 20%;
+                border-bottom-right-radius: 20%;
+            }
+
+            to {
+                height: 10px;
+                border-top-right-radius: 50%;
+                border-bottom-right-radius: 50%;
+            }
+        }
+
+        .channels {
+            width: 240px;
+            height: 100vh;
+            background: #2F3136;
+        }
+
+        .friends {
+            position: relative;
+            margin-top: 10px;
+            background: transparent;
+            width: 230px;
+            height: 45px;
+        }
+
+        .profilen {
+            float: right;
+            position: absolute;
+            color: white;
+            top: 50%;
+            left: 45%;
+            transform: translate(-45%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .profilep {
+            width: 40px;
+            border-radius: 50%;
+            height: 40px;
+            position: absolute;
+            background: linear-gradient(-45deg, #f3f3f3, #949494, #f3f3f3);
+            top: 50%;
+            left: 5%;
+            transform: translate(-5%, -50%);
+        }
+
+        .friends:hover {
+            background: #42464D;
+            border-radius: 5px;
+        }
+
+        .hvrclr:hover {
+            animation: hvrclr1 .1s ease-in-out forwards;
+        }
+
+        .hvrclr {
+            animation: hvrclr2 .1s ease-in-out forwards;
+        }
+        @keyframes hvrclr1 {
+            from {
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                color: #4CA55D;
+            }
+            to {
+                background: #4CA55D;
+                color: white;
+                border-radius: 30%;
+                -webkit-border-radius: 30%;
+                -moz-border-radius: 30%;
+            }
+        }
+
+        @keyframes hvrclr2 {
+            from {
+                background: #4CA55D;
+                color: white;
+                border-radius: 30%;
+                -webkit-border-radius: 30%;
+                -moz-border-radius: 30%;
+            }
+
+            to {
+                background: #36393F;
+                color: #4CA55D;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+            }
+            }
+    </style>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js'
+            import { getDatabase, ref, set, push, child, onValue, onChildAdded} from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js'
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyAnRHPuCVg4wiMPQf-o86IvPEaMkMnJGQs",
+              authDomain: "messageapp-445ce.firebaseapp.com",
+              databaseURL: "https://messageapp-445ce-default-rtdb.firebaseio.com/",
+              projectId: "messageapp-445ce",
+              storageBucket: "messageapp-445ce.appspot.com",
+              messagingSenderId: "39746481300",
+              appId: "1:39746481300:web:70e80937c96b34deed9881"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const database = getDatabase(app);
+            var myName = prompt("Írd be a neved");
+            function writeUsrDta() {
+            const id = push(child(ref(database), "messages")).key;
+            var message = document.getElementById("myText").value;
+            console.log(myName, message);
+            set(ref(database, "messages/" +id), {
+                "name": myName,
+                "message": message
+            });
+            document.getElementById("myText").value = "";
+            }
+    
+            const newMsg = ref(database, "messages/");
+            onChildAdded(newMsg, (data) => {
+                if(data.val().name != myName) {
+                    var divData =
+                    
+                    '                        <div class="msg_cotainer" >\n' +
+                        '<div class="profilep2"></div> ' +
+                        '                            '+'<b class="name">' + data.val().name + '</b>' + '<br>' + '<b class="message">' + data.val().message+ '</b>' +'' +
+                    '                        </div>\n';
+                    const msgcontainer = document.querySelector("#bodyContent");
+                    msgcontainer.insertAdjacentHTML("beforeend", divData);
+                } else {
+                    var divData =
+                    '                        <div class="msg_cotainer" >\n' +
+                        '<div class="profilep2"></div>' +
+                        '                            '+'<b class="name">' + data.val().name + '</b>' + '<br>' + '<b class="message">' + data.val().message+ '</b>' +'' +
+                    '                        </div>\n';                
+                    const msgcontainer = document.querySelector("#bodyContent");
+                    msgcontainer.insertAdjacentHTML("beforeend", divData);
+                }
+            });
+    
+            document.getElementById("send").onclick = function(){
+                writeUsrDta();
+            }
+
+          </script>
+          
+          <script>
+                        document.getElementById("myText").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    document.getElementById("send").click();
+  }
+});
+          </script>
+          <style>
+            .SendBTN {
+                width: 30px;
+                height: 30px;
+                border: #B9BBBE 1px solid ;
+                color: #B9BBBE;
+                border-radius: 50%;
+                border-bottom-left-radius: 0px;
+                margin-right: 5px;
+                background: #40444B;
+                font-weight: bolder;
+                font-size: 1em;
+            }
+    
+            .msg_cotainer {
+                width: calc(100vw - 420px);
+                height: fit-content;
+                color: white;
+                background: #2F3136;
+                padding: 5px;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 10px;
+                margin-bottom: 5px;
+                border-bottom-left-radius: 0px;
+                text-align: left;
+                margin-left: 10px;
+            }
+
+            #bodyContent {
+                overflow-y: scroll;
+                overflow-x: hidden;
+                height: 89vh;
+                width: calc(100vw - 320px);
+                position: absolute;
+                left: 320px;
+                right: 0px;
+            }
+
+            @media screen and (max-width: 693px) {
+                .channels {
+                    display: none;
+                }
+
+                .msgsender {
+                    left: 80px;
+                    width: calc(100vw - 80px);
+                }
+
+                #bodyContent {
+                    left: 80px;
+                    width: calc(100vw - 80px);
+                }
+                
+                .msg_cotainer {
+                    width: calc(100vw - 170px);
+                }
+
+
+            }
+
+            .profilep2 {
+            width: 40px;
+            border-radius: 50%;
+            height: 40px;
+            background: linear-gradient(-45deg, #f3f3f3, #949494, #f3f3f3);
+            float: left;
+        }
+
+        .name {
+            margin-left: 10px;
+        }
+
+        .message {
+            margin-left: 10px;
+            font-weight: normal;
+        }
+          </style>
+</body>
+</html>
