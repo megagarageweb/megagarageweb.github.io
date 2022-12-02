@@ -12,9 +12,9 @@
         <br>
         <div class="sidebtn active" style="margin-top: -25px; margin-bottom: 10px;"  onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif_active"></div></div><h1>C</h1></div>
         <hr class="hr1"> 
-        <div class="sidebtn" style="margin-top: -12px;" onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif"></div></div><h1>W</h1></div>
-        <div class="sidebtn" onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif"></div></div><h1>B</h1></div>
-        <div class="sidebtn" onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif"></div></div><h1>C</h1></div><br>
+        <div class="sidebtn" style="margin-top: -12px;" id="opengarageweb"><div class="container"><div class="notif"></div></div><h1 class="fixside">W</h1></div>
+        <div class="sidebtn" onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif"></div></div><h1 class="fixside">B</h1></div>
+        <div class="sidebtn" onclick="alert('Not Available At The Moment');"><div class="container"><div class="notif"></div></div><h1 class="fixside">C</h1></div><br>
         <hr class="hr1">
         <div class=" hvrclr" onclick="alert('Not Available At The Moment');"><div class="container"><div></div></div><h1>+</h1></div>
         <div class=" hvrclr" style="margin-bottom: -10px;" onclick="alert('Not Available At The Moment');"><div class="container"><div></div></div><svg aria-hidden="true" role="img" class="circleIcon-3489FI" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM14.19 14.19L6 18L9.81 9.81L18 6L14.19 14.19Z"></path></svg></div><br>
@@ -30,6 +30,7 @@
         <center><div class="friends bottmom"><div class="profilep"></div><div class="profilen usrbtm" id="user1" ></div></div></center>
     </center>
     </div>
+    <div><h1 class="chatinfo">⠀⠀<b class="channelinfo"><i>#⠀</i></b>chat</h1></div>
     <div id="bodyContent">
         <ul id="messages"></ul>
         
@@ -40,11 +41,13 @@
         <button id="send" class="SendBTN">⬆</button>  
     </div>
     <style>
+        @import url('https://fonts.cdnfonts.com/css/uni-sans-regular');
         body {
             margin: 0;
             padding: 0;
             background: #36393F;
             display: flex;
+            font-family: 'Uni Sans Demo', sans-serif ;
         }
         .sidebar {
             width: 70px;
@@ -65,7 +68,25 @@
         .usrbtm {
             position: absolute !important;
             top: 50% !important;
-            left: 41% !important;
+            left: 0px !important;
+        }
+
+        .chatinfo {
+            position: absolute;
+            color: #f3f3f3;
+            text-align: left !important;
+            background-color: #36393F;
+            border-bottom: #202225 1px solid;
+            width: calc(100vw - 310px);
+            font-size: 1.5em;
+            left: 310px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .channelinfo {
+            font-weight: lighter;
+            color: #8E9297;
         }
 
         .bottmom:hover {
@@ -150,9 +171,12 @@
         }
 
         h1 {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Uni Sans Demo', sans-serif ;
             text-align: center;
             font-size: 1.8em;
+        }
+
+        .fixside {
             margin-left: -5px;
         }
 
@@ -274,14 +298,14 @@
         }
 
         .profilen {
-            float: right;
+            float: left;
             position: absolute;
             color: white;
-            text-align: left;
-            top: 50%;
-            left: 45%;
-            transform: translate(-45%, -50%);
-            font-family: Arial, Helvetica, sans-serif;
+            text-align: left !important;
+            top: 55%;
+            margin-left: 55px;
+            transform: translate(0, -45%);
+            font-family: 'Uni Sans Demo', sans-serif ;
         }
 
         .profilep {
@@ -307,7 +331,7 @@
             left: 90%;
             color: #949494;
             transform: translate(0, -50%);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Uni Sans Demo', sans-serif ;
 
         }
 
@@ -318,7 +342,7 @@
             left: 90%;
             color: transparent;
             transform: translate(0, -50%);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Uni Sans Demo', sans-serif ;
         }
 
         .hvrclr:hover {
@@ -440,6 +464,10 @@
     document.getElementById("send").click();
   }
 });
+
+document.getElementById("opengarageweb").addEventListener("click", function() {
+    location.href = "https://megagarageweb.github.io";
+});
           </script>
           <style>
             .SendBTN {
@@ -461,7 +489,7 @@
                 color: white;
                 background: #2F3136;
                 padding: 5px;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Uni Sans Demo', sans-serif ;
                 border-radius: 10px;
                 margin-bottom: 5px;
                 border-bottom-left-radius: 0px;
@@ -477,6 +505,7 @@
                 width: calc(100vw - 320px);
                 position: absolute;
                 left: 320px;
+                margin-top: 40px;
                 right: 0px;
             }
 
