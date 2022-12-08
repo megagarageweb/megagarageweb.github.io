@@ -283,7 +283,7 @@
             }
 
             to {
-                height: 25px;
+                height: 20px;
                 border-top-right-radius: 20%;
                 border-bottom-right-radius: 20%;
             }
@@ -446,8 +446,6 @@
             const readpw = ref(database, "password/pass");
             onValue(readpw, (snapshot) => {
                 const finPw = snapshot.val()
-                    const myName = document.getElementById("username").value;
-                    const password = document.getElementById("password").value;
                 if(myName == "NDX" && password == finPw) {
                 myName = myName;
                 document.getElementById("chngpfp").style.background = "linear-gradient(-45deg, #00CCFF, #FF00CC)";
