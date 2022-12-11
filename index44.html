@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>▶Ultimate TXT maker◀</title>
+</head>
+<body>
+    <center class="center">
+
+       <center><h1 class="head">Create <b class="b1">.txt</b> file</h1></center>
+<div class="mainbox">
+   <label for="fname">File name</label>
+   <br>
+   <input type="text" id="fname" name="fname" placeholder="eg.: mynote"><br><br>
+   <label for="fcontent">File content</label>
+   <br>
+   <textarea id="fcontent" name="w3review" rows="4" cols="50" placeholder="Type your text..."></textarea>
+   <br>
+   <button id="create">Create File</button>
+   <a download="info.txt" id="downloadlink" style="display: none">Download</a>
+</div>
+
+    </center>
+    <script>
+        (function() {
+    var textFile = null,
+        makeTextFile = function(text) {
+            var data = new Blob([text], {
+                type: 'text/plain'
+            });
+
+            if (textFile !== null) {
+                window.URL.revokeObjectURL(textFile);
+            }
+
+            textFile = window.URL.createObjectURL(data);
+
+            return textFile;
+        };
+
+
+    var create = document.getElementById('create');
+    var fileContent = document.getElementById("fcontent");
+
+    create.addEventListener('click', function() {
+        const fileName = document.getElementById("fname").value;
+        document.getElementById("downloadlink").setAttribute("download", fileName);
+        var link = document.getElementById('downloadlink');
+        link.href = makeTextFile(fileContent.value);
+        create.style.display = 'none';
+        link.style.display = 'block';
+    }, false);
+})();
+
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #f3f3f3;
+            background-image: linear-gradient(300deg, #f3f3f3 0%, #ffffff 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .head {
+            font-size: 3em;
+        }
+
+        .b1 {
+            background-image: linear-gradient(to left, #fa709a 0%, #fee140 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mainbox {
+            width: fit-content;
+            padding: 2em;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            animation: animate-two 1s ease;
+        }
+
+        @keyframes animate-two {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        label {
+            position: relative;
+            font-size: 1.5em;
+        }
+
+        label::before {
+            content: "";
+            position: absolute;
+            top: 78%;
+            width: 100%;
+            left: 0;
+            height: 3px;
+            border-radius: 50px;
+            background-image: linear-gradient(to left, #fa709a 0%, #fee140 100%);
+        }
+
+        #fname {
+            border: #d0d0d0 1px solid;
+            border-radius: 5px;
+            padding-bottom: 2px;
+        }
+
+        #fname::placeholder, #fcontent::placeholder {
+            padding-left: 3px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        #fcontent {
+            resize: none;
+            width: 60vmin;
+            border: #d0d0d0 1px solid;
+            border-radius: 5px;
+        }
+
+        #fname:focus, #fcontent:focus {
+            outline: none;
+            border: #d0d0d0 1px solid;
+        }
+
+        button {
+            transition: all .5s ease;
+            color: #000;
+            border: 2px solid #d0d0d0;
+            font-family:'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            font-size: 17px;
+            background-color : transparent;
+            padding: 10px;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        button:hover {
+            color: #fff;
+            animation: animate .5s ease forwards;
+        }
+
+        @keyframes animate {
+            0% {
+                background: linear-gradient(-45deg, #fa709a00, #fee14000);
+            }
+
+            100% {
+                background: linear-gradient(-45deg, #fa709a, #fee140);
+            }
+        }
+
+        a {
+            display: block;
+            width: 250px;
+            height: 50px;
+            line-height: 46px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 50px;
+            border: 2px solid #d0d0d0;
+            color: #000;
+            font-family: arial;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+            text-transform: uppercase;
+            transition: all .35s;
+        }
+
+        a:before, a:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: -100%;
+            left: 0;
+            background: linear-gradient(to left, #fa709a 0%, #fee140 100%);
+            z-index: -1;
+            transition: all .35s;
+        }
+
+        a:before{
+            opacity: .5;
+        }
+
+        a:after{
+            transition-delay: .2s;
+        }
+
+        a:hover{
+            color: #fff;
+        }
+
+        a:hover:before, a:hover:after{
+            top: 0;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</body>
+</html>
