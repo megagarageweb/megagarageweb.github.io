@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="fireworks"></canvas>
+
+    <style>
+        body {
+            background: #000;
+            overflow: hidden !important;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+
+        /*
+        Made by NDXCode
+        If you like my project please consider upvoting👍
+        Please report if there is any bugs
+        My website: https://ndxcode.github.io/
+        TikTok: @ndxcode
+        
+        
+        ███████╗██╗██████╗░███████╗░██╗░░░░░░░██╗░█████╗░██████╗░██╗░░██╗░██████╗
+        ██╔════╝██║██╔══██╗██╔════╝░██║░░██╗░░██║██╔══██╗██╔══██╗██║░██╔╝██╔════╝
+        █████╗░░██║██████╔╝█████╗░░░╚██╗████╗██╔╝██║░░██║██████╔╝█████═╝░╚█████╗░
+        ██╔══╝░░██║██╔══██╗██╔══╝░░░░████╔═████║░██║░░██║██╔══██╗██╔═██╗░░╚═══██╗
+        ██║░░░░░██║██║░░██║███████╗░░╚██╔╝░╚██╔╝░╚█████╔╝██║░░██║██║░╚██╗██████╔╝
+        ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
+
+        */
+        alert("If you like my project please consider upvoting👍");
+        alert("Click the screen to make a firework");
+
+        var canvas = document.getElementById("fireworks");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener("resize", function () {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        var fireworks = [];
+
+        class Firework {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+                this.particles = [];
+                var particleSize = Math.random() + 0.5;
+                if (window.innerWidth < 600) {
+                    particleSize += 0.6;
+                }
+                for (var i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: this.x,
+                        y: this.y,
+                        vx: Math.random() * 4 - 2,
+                        vy: Math.random() * -4 + 1,
+                        size: particleSize
+                    });
+                }
+            }
+
+            update() {
+                for (var i = 0; i < this.particles.length; i++) {
+                    var p = this.particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.05;
+                }
+            }
+
+            draw() {
+                for (var i = 0; i < this.particles.length; i++) {
+                    var p = this.particles[i];
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+        }
+
+        canvas.addEventListener("click", function (event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            fireworks.push(new Firework(x, y));
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < fireworks.length; i++) {
+                var f = fireworks[i];
+                f.update();
+                f.draw();
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+
+</html>
