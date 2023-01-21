@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrate device</title>
+</head>
+
+<body>
+    <button id="button">Vibrate</button>
+    <script>
+        const button = document.getElementById("button");
+
+        button.addEventListener('click', funcVibrate);
+
+        function funcVibrate() {
+            try {
+                navigator.vibrate(1000);
+                console.log('Vibrated');
+            }
+            catch (err) {
+                console.log('Error trying to vibrate ' + err.message);
+            }
+            finally {
+                console.log('Tryed to vibrate device');
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2em;
+        }
+
+        button {
+            font-size: 2em;
+            border-radius: 50px;
+            border: black 1px solid;
+            padding: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: white;
+            text-transform: uppercase;
+            background: linear-gradient(-45deg, #30cfd0, #330867);
+            background-size: 200% 200%;
+            animation: Animation-two 1s ease forwards;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        button:hover {
+            animation: Animation 1s ease forwards;
+        }
+
+        @keyframes Animation {
+            0% {
+                background-position: 10% 0%
+            }
+
+            100% {
+                background-position: 91% 100%
+            }
+        }
+
+        @keyframes Animation-two {
+            0% {
+                background-position: 91% 100%
+            }
+
+            100% {
+                background-position: 10% 0%
+            }
+        }
+    </style>
+</body>
+
+</html>
