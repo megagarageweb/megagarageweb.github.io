@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta property="og:site_name" content="Mega Garage Web">
     <meta property="og:url" content="https://megagarageweb.github.io/">
-    <meta property="og:title" content="A Mega Garage hivatalos weboldala>
+    <meta property="og:title" content="A Mega Garage hivatalos weboldala">
     <meta property="og:description" content="Halgatnál egy kis zenét? Vagy csak a Mega Garagevel kapcsolatos információt keresel?  Ne menj sehova, jó helyen jársz!">
     <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
           <script>
             if (navigator.userAgent.match(/samsung/i)) {
                     alert("A te böngészőszd (Samsung Internet) nem támogatja " + 
-                      "a weboldal stílusát. Kérem használj egy másik  " + 
+                      "a weboldal stílusát. Kérlek használj egy másik  " + 
                       "népszerű böngészőt. \n\n" +
                       "Például: Firefox, Microsoft Edge, vagy Google Chrome."); 
             }
@@ -277,13 +277,13 @@
       <div class="sponbtm">
         <details class="megatext2">
             <summary>Hasznos Weboldalak</summary>
-            <a href="https://microsoft.gointeract.io/interact/index?interaction=1461173234028-3884f8602eccbe259104553afa8415434b4581-05d1&accountId=microsoft&appkey=196de13c-e946-4531-98f6-2719ec8405ce&Language=English&CountryCode=UK&CountryLanguage=EN&Click%20To%20Call%20Caller%20Id=+447414501558&startedFromSmsToken=QVvxTfm&token=q2FMrK"> <span>XP aktiválás</span></a> <br>
             <a href="http://home.sch.bme.hu/~dannyboy/keys.html"><span>Win/App Aktiválás</span></a> <br>
             <a href="http://ndxcode.github.io/"><span>NDXCode</span></a> <br>
             <a href="http://phonecollection.hu/"><span>Phone Collection Hungary</span></a> <br>
             <a href="https://github.com/NDXCode/Odin-Hub/raw/main/Odin Hub.zip"><span>Odin HUB</span></a><br>
-            <a href="index20.html"><span>Billenytyűzet tesztelő</span></a> <br>
-            <a href="index26.html"><span>Garage Chat</span></a>
+            <a href="https://megagarageweb.github.io/index20.html"><span>Billenytyűzet tesztelő</span></a> <br>
+            <a href="https://megagarageweb.github.io/index26.html"><span>Garage Chat</span></a><br>
+            <a href="https://forum.xda-developers.com/t/tool-eclipse-flash-tool-v1-5.4565923/"><span>Eclipse Flash Tool</span></a>
         </details>
       </div>
       <br>
@@ -298,7 +298,7 @@
             <div class="content">
                 <div class="close-btn" onclick="togglePopup()">&times;</div>
 
-                    <p>Copyright © 2022 NDXCode <br> Minden Jog Fenntartva</p>
+                    <p>Copyright © 2022-<span id="nowyear"></span> NDXCode <br> Minden Jog Fenntartva</p>
             </div>
         </div>
     </div>
@@ -320,6 +320,14 @@
 
         :root {
             color-scheme: light only;
+        }
+
+        ::-moz-selection {
+            background: #00CCFFCC;
+        }
+
+        ::selection {
+            background: #00CCFFCC;
         }
 
         body {
@@ -473,7 +481,21 @@
             box-sizing: border-box;
         }
 
+        .content {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
         .popup .close-btn {
+            padding: 0;
             position: absolute;
             cursor: pointer;
             right: 20px;
@@ -487,6 +509,7 @@
             line-height: 30px;
             text-align: center;
             border-radius: 50%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
 
         .popup.active .overlay {
@@ -851,6 +874,12 @@
         filter: drop-shadow(0 0 5px #00ffe2) drop-shadow(0 0 15px #00ffe2);
     }
       </style>
+
+      <script>
+        var nowyear = document.getElementById("nowyear");
+        var year = new Date().getFullYear();
+        nowyear.innerHTML = year;
+      </script>
       
 </body>
 </html>
