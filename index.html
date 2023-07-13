@@ -52,7 +52,42 @@
             <source id="megyamega" src="https://gamershouse.hu:8080/livemega.mp3" type="audio/mp3">
             Your browser does not support HTML audio.
           </audio>
-    </div></center>
+    </div>
+    <center>
+    <div class="visual-audio" style="transform: scale(0.5); margin: -80px;">
+    <canvas id='canvas' width="800" height="350" style="backdrop-filter: blur(5px); background: rgba(0, 0, 0, 0.2); padding: 30px; border-radius: 20px;"></canvas>
+    </div>
+    </center>
+
+    <style>
+        @media only screen and (max-width: 650px) {
+            .visual-audio {
+                transform: scale(0.3) !important;
+                margin-left: -60px;
+            }
+        }
+
+        @media only screen and (max-width: 430px) {
+            .visual-audio {
+                transform: scale(0.2) !important;
+                margin-left: -80px;
+            }
+        }
+        
+    </style>
+
+
+    <script>
+        window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function () {
+            var audio = document.getElementById('megyamega2'); var ctx = new AudioContext(); var analyser = ctx.createAnalyser(); var audioSrc = ctx.createMediaElementSource(audio); audioSrc.connect(analyser); analyser.connect(ctx.destination); var frequencyData = new Uint8Array(analyser.frequencyBinCount); var canvas = document.getElementById('canvas'), cwidth = canvas.width, cheight = canvas.height - 2, meterWidth = 10, gap = 2, capHeight = 2, capStyle = '#fff', meterNum = 800 / (10 + 2), capYPositionArray = []; ctx = canvas.getContext('2d'), gradient = ctx.createLinearGradient(0, 0, 0, 300); gradient.addColorStop(1, '#7289da'); gradient.addColorStop(0, '#36393f'); function renderFrame() {
+                var array = new Uint8Array(analyser.frequencyBinCount); analyser.getByteFrequencyData(array); var step = Math.round(array.length / meterNum); ctx.clearRect(0, 0, cwidth, cheight); for (var i = 0; i < meterNum; i++) { var value = array[i * step]; if (capYPositionArray.length < Math.round(meterNum)) { capYPositionArray.push(value); }; ctx.fillStyle = capStyle; if (value < capYPositionArray[i]) { ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight); } else { ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight); capYPositionArray[i] = value; }; ctx.fillStyle = gradient; ctx.fillRect(i * 12, cheight - value + capHeight, meterWidth, cheight); }
+                requestAnimationFrame(renderFrame);
+            }
+            renderFrame(); audio.play();
+        };
+    </script>
+
+</center>
     <br> <br> <br> <br> <br>
     <div class="mobilemega">
         <h1>Mobilon vagy?</h1>
@@ -454,6 +489,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+
 
         .popup .overlay {
             position: fixed;
